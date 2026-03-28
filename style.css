@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlowRoads - Endless Car Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="gameScore">Score: 0</div>
-    <div class="gameArea">
-        <div class="road"></div>
-        <div id="myCar"></div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+body { margin: 0; padding: 0; background: #222; font-family: 'Arial', sans-serif; overflow: hidden; touch-action: none; }
+#gameScore { position: absolute; top: 20px; left: 20px; color: white; font-size: 25px; z-index: 10; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 5px; }
+.gameArea { position: relative; width: 100%; max-width: 400px; height: 100vh; background: #444; margin: auto; border-left: 5px solid white; border-right: 5px solid white; overflow: hidden; }
+.road { position: absolute; width: 100%; height: 100%; background: repeating-linear-gradient(#444, #444 100px, #fff 100px, #fff 120px); animation: moveRoad 1s linear infinite; }
+@keyframes moveRoad { from { top: -120px; } to { top: 0px; } }
+#myCar { width: 50px; height: 80px; background: #e74c3c; position: absolute; bottom: 50px; left: 175px; border-radius: 10px; z-index: 5; }
+.enemy { width: 50px; height: 80px; background: #3498db; position: absolute; border-radius: 10px; }
+
+/* Mobile Touch Areas */
+.touch-btn { position: absolute; bottom: 0; width: 50%; height: 100%; z-index: 20; }
+#leftBtn { left: 0; }
+#rightBtn { right: 0; }
